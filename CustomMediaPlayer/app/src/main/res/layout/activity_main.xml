@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/material_dynamic_primary40"
+            android:theme="?actionBarTheme"
+            android:minHeight="?actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/emptyMessage"
+        layout="@layout/song_empty_item"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/songView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="13"/>
+
+
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        app:show_buffering="never"
+        app:show_shuffle_button="true"
+        app:artwork_display_mode="off"
+        app:show_timeout="0"
+        app:hide_on_touch="false"
+        app:bar_gravity="bottom"
+        app:repeat_toggle_modes="one|all"
+        app:controller_layout_id="@layout/player_controls"
+        />
+
+</LinearLayout>
